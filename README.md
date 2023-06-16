@@ -17,12 +17,19 @@
     import { Map, map } from  "./map";
     ```
 
-3. Call `<Map />` and your map is there ^ ^, for example:
+3. Call `<Map />` and you should see the map, for example:
 
     ```jsx
-    <div style={{ height: "80vh" }}>
-      <Map />
-    </div>
+    import React from "react";
+    import { Map, map } from "./map";
+
+    const App = () => {
+      return (
+        <div style={{ height: "80vh" }}>
+          <Map />
+        </div>
+      );
+    };
     ```
 
 4. Use `map` instance to use sphere API, for example:
