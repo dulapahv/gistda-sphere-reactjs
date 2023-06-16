@@ -1,4 +1,4 @@
-# GISTDA sphere map component for React + demo
+# GISTDA sphere map component for ReactJS + demo
 
 - [API Demo](https://sphere.gistda.or.th/docs/js/createmap/)
 - [GISTDA sphere API Reference](https://api.sphere.gistda.or.th/map/doc.html)
