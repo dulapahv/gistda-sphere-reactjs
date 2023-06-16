@@ -21,11 +21,11 @@
 
     ```jsx
     <div style={{ height: "80vh" }}>
-    <Map />
+      <Map />
     </div>
     ```
 
-4. Use `map` to use sphere API, for example:
+4. Use `map` instance to use sphere API, for example:
 
     ```jsx
     map.goTo({ center: { lon: 100.510847, lat: 13.743757 }, zoom: 14 });
