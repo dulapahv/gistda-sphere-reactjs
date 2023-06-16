@@ -2,7 +2,7 @@ import React from "react";
 import { Map, map } from "./map";
 
 const setLocationZoom = () => {
-  // GISTDA sphere API Reference: https://api.sphere.gistda.or.th/map/doc.html
+  // https://api.sphere.gistda.or.th/map/doc.html#Map.goTo
   map.goTo({ center: { lon: 100.510847, lat: 13.743757 }, zoom: 14 });
 
   document.getElementById("status").innerHTML =
@@ -18,7 +18,7 @@ const changeLanguage = () => {
   ).innerHTML = `Status: Language changed to ${map.language()}`;
 };
 
-function App() {
+const App = () => {
   return (
     <div style={{ height: "80vh" }}>
       <button onClick={setLocationZoom}>Set Location and Zoom</button>
@@ -28,6 +28,6 @@ function App() {
       <Map />
     </div>
   );
-}
+};
 
 export default App;
