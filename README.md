@@ -14,14 +14,15 @@
 2. Import map component (Map) and instance (map).
 
     ```jsx
-    import { Map, map } from  "./map";
+    import { map, Map } from "./map";
     ```
 
 3. Call `<Map />` and you should see the map, for example:
 
     ```jsx
     import React from "react";
-    import { Map, map } from "./map";
+
+    import { map, Map } from "./map";
 
     const App = () => {
       return (
