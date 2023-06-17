@@ -1,5 +1,6 @@
 import React from "react";
-import { Map, map } from "./map";
+
+import { map, Map } from "./map";
 
 const setLocationZoom = () => {
   // https://api.sphere.gistda.or.th/map/doc.html#Map.goTo
