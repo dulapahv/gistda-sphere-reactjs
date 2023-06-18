@@ -19,7 +19,7 @@ const changeLanguage = () => {
   ).innerHTML = `Status: Language changed to ${map.language()}`;
 };
 
-const App = () => {
+export default function app() {
   return (
     <div style={{ height: '80vh' }}>
       <button onClick={setLocationZoom}>Set Location and Zoom</button>
@@ -29,6 +29,4 @@ const App = () => {
       <Map />
     </div>
   );
-};
-
-export default App;
+}
