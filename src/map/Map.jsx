@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { map, sphere, SphereMap } from './SphereMap';
 
-export { map };
+export { map, sphere };
 
 export default class Map extends Component {
   initMap() {

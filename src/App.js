@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { map, Map } from './map';
+import { map, Map, sphere } from './map';
 
 const setLocationZoom = () => {
   // https://api.sphere.gistda.or.th/map/doc.html#Map.goTo
@@ -19,11 +19,22 @@ const changeLanguage = () => {
   ).innerHTML = `Status: Language changed to ${map.language()}`;
 };
 
+const changeTheme = () => {
+  // https://api.sphere.gistda.or.th/map/doc.html#Filter
+  // https://api.sphere.gistda.or.th/map/doc.html#Map.enableFilter
+  map.enableFilter(sphere.Filter.Dark);
+
+  document.getElementById(
+    'status'
+  ).innerHTML = `Status: Theme changed to ${map.enableFilter()}`;
+};
+
 export default function app() {
   return (
     <div style={{ height: '80vh' }}>
       <button onClick={setLocationZoom}>Set Location and Zoom</button>
       <button onClick={changeLanguage}>Change to English</button>
+      <button onClick={changeTheme}>Change to Dark</button>
       <p id='status'>Status: </p>
 
       <Map />
