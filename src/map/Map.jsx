@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import { map, sphere, SphereMap } from "./SphereMap";
+import { map, sphere, SphereMap } from './SphereMap';
 
 export { map };
 
-class Map extends Component {
+export default class Map extends Component {
   initMap() {
     // To set default map layer, change "STREETS" to any other layer (i.e. sphere.Layers.TRAFFIC).
     // See https://api.sphere.gistda.or.th/map/doc.html#Layers for available layers
@@ -13,14 +13,12 @@ class Map extends Component {
 
   render() {
     // Replace this with your own API key: https://sphere.gistda.or.th/
-    const mapKey = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+    const mapKey = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX';
 
     return (
-      <div style={{ height: "100%", width: "100%" }}>
-        <SphereMap id="sphere-map" mapKey={mapKey} callback={this.initMap} />
+      <div style={{ height: '100%', width: '100%' }}>
+        <SphereMap id='sphere-map' mapKey={mapKey} callback={this.initMap} />
       </div>
     );
   }
 }
-
-export default Map;
