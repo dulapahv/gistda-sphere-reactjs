@@ -2,6 +2,10 @@
   // These tasks will run in order when initializing your CodeSandbox project.
   "setupTasks": [
     {
+      "command": "rm -rf ./node_modules",
+      "name": "Remove node_modules folder"
+    },
+    {
       "command": "npm i",
       "name": "Install Dependencies"
     }
