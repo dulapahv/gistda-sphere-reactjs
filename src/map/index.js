@@ -1,1 +1,1 @@
-export * from './SphereMap';
+export * from './sphere-map';
