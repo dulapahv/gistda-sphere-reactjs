@@ -1,5 +1,6 @@
 # GISTDA sphere map component for ReactJS + demo
 
+- [CodeSandbox Demo](https://codesandbox.io/p/github/dulapahv/gistda-sphere-reactjs/main?import=true)
 - [API Demo](https://sphere.gistda.or.th/docs/js/createmap/)
 - [GISTDA sphere API Reference](https://api.sphere.gistda.or.th/map/doc.html)
 
@@ -32,3 +33,5 @@
     ```jsx
     mapRef.goTo({ center: { lon: 100.510847, lat: 13.743757 }, zoom: 14 });
     ```
+
+For more example usage, see `./src/App.jsx`.
