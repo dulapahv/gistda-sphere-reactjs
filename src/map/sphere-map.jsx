@@ -1,6 +1,12 @@
-import { useEffect } from 'react';
+import { useEffect, memo } from 'react';
 
-export function SphereMap({ mapKey, id, callback, mapRef, sphereRef }) {
+export const SphereMap = memo(function SphereMap({
+  mapKey,
+  id,
+  callback,
+  mapRef,
+  sphereRef,
+}) {
   useEffect(() => {
     const existingScript = document.getElementById('sphereMapScript');
 
@@ -37,4 +43,4 @@ export function SphereMap({ mapKey, id, callback, mapRef, sphereRef }) {
   }, [mapKey, id, callback, mapRef, sphereRef]);
 
   return <div id={id} style={{ width: '100%', height: '100%' }} />;
-}
+});
