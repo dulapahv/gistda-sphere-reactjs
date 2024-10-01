@@ -15,6 +15,13 @@ export default function App() {
     if (!mapRef.current) return;
 
     mapRef.current.Layers.setBase(sphereRef.current.Layers.STREETS);
+
+    mapRef.current.Event.bind(
+      sphereRef.current.EventName.OverlayDrop,
+      function (e) {
+        console.log(e.location());
+      }
+    );
   }, []);
 
   function setLocationZoom() {
@@ -56,7 +63,10 @@ export default function App() {
   function addMarker() {
     // https://sphere.gistda.or.th/docs/js/marker
     // https://api.sphere.gistda.or.th/map/doc.html#Marker
-    const marker = new sphereRef.current.Marker({ lon: 100.56, lat: 13.74 });
+    const marker = new sphereRef.current.Marker(
+      { lon: 100.56, lat: 13.74 },
+      { draggable: true }
+    );
     mapRef.current.Overlays.add(marker);
 
     document.getElementById('status').innerHTML =
@@ -81,10 +91,13 @@ export default function App() {
     });
 
     // add marker
-    const marker = new sphereRef.current.Marker({
-      lon: result.lon,
-      lat: result.lat,
-    });
+    const marker = new sphereRef.current.Marker(
+      {
+        lon: result.lon,
+        lat: result.lat,
+      },
+      { draggable: true }
+    );
     mapRef.current.Overlays.add(marker);
 
     document.getElementById(
