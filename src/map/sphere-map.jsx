@@ -17,6 +17,10 @@ export const SphereMap = memo(function SphereMap({
       mapRef.current = new window.sphere.Map({
         placeholder: document.getElementById(id),
       });
+
+      mapRef.current.Event.bind(sphereRef.current.EventName.Ready, function () {
+        callback();
+      });
     }
 
     if (!existingScript) {
@@ -29,7 +33,6 @@ export const SphereMap = memo(function SphereMap({
       script.onload = () => {
         try {
           initMap();
-          if (callback) callback();
         } catch {}
       };
 
@@ -38,7 +41,6 @@ export const SphereMap = memo(function SphereMap({
       };
     } else {
       initMap();
-      if (callback) callback();
     }
   }, [mapKey, id, callback, mapRef, sphereRef]);
 
