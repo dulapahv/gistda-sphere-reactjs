@@ -1,6 +1,6 @@
 import { useRef, useState, useCallback } from 'react';
 
-import { SphereMap } from './map/sphere-map';
+import { SphereMap } from './sphere-map';
 
 export default function App() {
   const mapRef = useRef();

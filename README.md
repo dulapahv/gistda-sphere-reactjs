@@ -13,9 +13,7 @@
 2. Call `<SphereMap />` and pass in props.
 
     ```jsx
-    import { useRef } from 'react';
-
-    import { SphereMap } from './map';
+    import { SphereMap } from './sphere-map';
 
     <div style={{ height: '100%', width: '100%' }}>
       <SphereMap
