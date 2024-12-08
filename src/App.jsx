@@ -76,7 +76,7 @@ const App = () => {
 
   const searchKeyword = () => {
     // https://sphere.gistda.or.th/docs/web-service/search
-    const searchUrl = `https://api.sphere.gistda.or.th/services/search/search?keyword=${search}&key=${mapKey}`;
+    const searchUrl = `https://api.sphere.gistda.or.th/services/search/search?keyword=${search}&key=${SPHERE_MAP_KEY}`;
     fetch(searchUrl)
       .then((response) => response.json())
       .then((data) => {
