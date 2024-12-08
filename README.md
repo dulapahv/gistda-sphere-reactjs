@@ -1,13 +1,14 @@
 # GISTDA sphere map component for ReactJS + demo
 
-- [CodeSandbox Demo](https://codesandbox.io/p/github/dulapahv/gistda-sphere-reactjs/main?import=true)
+- [CodeSandbox Demo](https://codesandbox.io/p/github/dulapahv/gistda-sphere-reactjs/main)
 - [API Demo](https://sphere.gistda.or.th/docs/js/createmap/)
 - [GISTDA sphere API Reference](https://api.sphere.gistda.or.th/map/doc.html)
 
-1. Replace `mapKey` value in `./src/App.jsx` with your own API key (get one [here](https://sphere.gistda.or.th/)).
+1. Replace `SPHERE_MAP_KEY` value in `./src/App.jsx` with your own API key (get one [here](https://sphere.gistda.or.th/)).
 
     ```jsx
-    const mapKey = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+    const SPHERE_MAP_KEY =
+      import.meta.env.VITE_SPHERE_MAP_KEY || 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX';
     ```
 
 2. Call `<SphereMap />` and pass in props.

@@ -2,14 +2,15 @@ import { useRef, useState, useCallback } from 'react';
 
 import { SphereMap } from './sphere-map';
 
+const SPHERE_MAP_KEY =
+  import.meta.env.VITE_SPHERE_MAP_KEY || 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX';
+
 const App = () => {
   const mapRef = useRef();
   const sphereRef = useRef();
 
   const [search, setSearch] = useState('');
   const [searchResults, setSearchResults] = useState([]);
-
-  const mapKey = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX';
 
   const onMapLoad = useCallback(() => {
     if (!mapRef.current) return;
@@ -137,7 +138,7 @@ const App = () => {
       <div style={{ height: '100%', width: '100%' }}>
         <SphereMap
           id='sphere-map'
-          mapKey={mapKey}
+          mapKey={SPHERE_MAP_KEY}
           callback={onMapLoad}
           mapRef={mapRef}
           sphereRef={sphereRef}
