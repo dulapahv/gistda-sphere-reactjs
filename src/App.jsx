@@ -2,7 +2,7 @@ import { useRef, useState, useCallback } from 'react';
 
 import { SphereMap } from './sphere-map';
 
-export default function App() {
+const App = () => {
   const mapRef = useRef();
   const sphereRef = useRef();
 
@@ -24,7 +24,7 @@ export default function App() {
     );
   }, []);
 
-  function setLocationZoom() {
+  const setLocationZoom = () => {
     if (!mapRef.current) return;
 
     // https://api.sphere.gistda.or.th/map/doc.html#mapRef.current.goTo
@@ -35,9 +35,9 @@ export default function App() {
 
     document.getElementById('status').innerHTML =
       'Status: Location and Zoom set to lon: 100.510847, lat: 13.743757, zoom: 14';
-  }
+  };
 
-  function changeLanguage() {
+  const changeLanguage = () => {
     if (!mapRef.current) return;
 
     // https://api.sphere.gistda.or.th/map/doc.html#LayerCollection.language
@@ -46,9 +46,9 @@ export default function App() {
     document.getElementById(
       'status'
     ).innerHTML = `Status: Language changed to ${mapRef.current.language()}`;
-  }
+  };
 
-  function changeTheme() {
+  const changeTheme = () => {
     if (!mapRef.current) return;
 
     // https://api.sphere.gistda.or.th/map/doc.html#Filter
@@ -58,9 +58,9 @@ export default function App() {
     document.getElementById(
       'status'
     ).innerHTML = `Status: Theme changed to ${mapRef.current.enableFilter()}`;
-  }
+  };
 
-  function addMarker() {
+  const addMarker = () => {
     // https://sphere.gistda.or.th/docs/js/marker
     // https://api.sphere.gistda.or.th/map/doc.html#Marker
     const marker = new sphereRef.current.Marker(
@@ -71,9 +71,9 @@ export default function App() {
 
     document.getElementById('status').innerHTML =
       'Status: Marker added at lon: 100.56, lat: 13.74';
-  }
+  };
 
-  function searchKeyword() {
+  const searchKeyword = () => {
     // https://sphere.gistda.or.th/docs/web-service/search
     const searchUrl = `https://api.sphere.gistda.or.th/services/search/search?keyword=${search}&key=${mapKey}`;
     fetch(searchUrl)
@@ -81,9 +81,9 @@ export default function App() {
       .then((data) => {
         setSearchResults(data.data);
       });
-  }
+  };
 
-  function goToSearchResult(result) {
+  const goToSearchResult = (result) => {
     // go to location
     mapRef.current.goTo({
       center: { lon: result.lon, lat: result.lat },
@@ -103,7 +103,7 @@ export default function App() {
     document.getElementById(
       'status'
     ).innerHTML = `Status: Go to ${result.name} and add marker at lon: ${result.lon}, lat: ${result.lat}`;
-  }
+  };
 
   return (
     <div style={{ height: '80vh' }}>
@@ -145,4 +145,6 @@ export default function App() {
       </div>
     </div>
   );
-}
+};
+
+export default App;
