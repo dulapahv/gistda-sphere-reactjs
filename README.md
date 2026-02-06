@@ -1,5 +1,10 @@
 # GISTDA sphere map component for ReactJS + demo
 
+> [!IMPORTANT]
+> This repository is deprecated and no longer maintained. Please use **[gistda-sphere-react](https://github.com/dulapahv/gistda-sphere-react)** package instead.
+
+---
+
 > [Live Preview](https://stackblitz.com/~/github.com/dulapahv/gistda-sphere-reactjs)
 
 1. Replace `SPHERE_MAP_KEY` value in `./src/App.jsx` with your own API key (get one [here](https://sphere.gistda.or.th/)).
